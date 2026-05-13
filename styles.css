@@ -431,7 +431,7 @@ h3 {
 }
 
 .service-card {
-  min-height: 320px;
+  min-height: 285px;
   padding: clamp(24px, 3vw, 34px);
   background: var(--white);
 }
@@ -442,7 +442,7 @@ h3 {
   justify-content: center;
   width: 46px;
   height: 46px;
-  margin-bottom: 58px;
+  margin-bottom: 42px;
   background: var(--orange);
   color: var(--white);
   font-size: 0.8rem;
@@ -450,6 +450,7 @@ h3 {
 }
 
 .service-card p {
+  margin-bottom: 0;
   color: var(--muted);
 }
 
