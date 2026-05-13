@@ -77,6 +77,22 @@ The Angi rating and review count link to the Angi profile.
 - Use the source archive only for business context, media, and historical content.
 - Keep the site static with no build step.
 
+## AI Workflow Influence
+
+The project workflow is influenced by Fabio Akita's writing on AI-assisted development:
+
+- Article: https://akitaonrails.com/en/2026/02/20/zero-to-post-production-in-1-week-using-ai-on-real-projects-behind-the-m-akita-chronicles/
+- GitHub: https://github.com/akitaonrails
+
+Relevant principles for this project:
+
+- The owner defines the business intent, priorities, and final taste.
+- The agent proposes and executes implementation, but should surface tradeoffs.
+- Work should happen in small production-ready increments.
+- Documentation should evolve whenever new project context is discovered.
+- The agent tends to overbuild if unchecked, so simple static-site solutions are preferred until there is a clear reason to add tooling.
+- Refactoring should be continuous and small, not a late emergency cleanup.
+
 ## Next Proposed Work
 
 Implement improvements one at a time:
@@ -95,4 +111,3 @@ Last known lightweight checks:
 - local asset reference check for `index.html`
 
 Manual browser review is recommended for layout changes.
-
