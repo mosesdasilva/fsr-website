@@ -52,6 +52,26 @@ Default branch:
 main
 ```
 
+## GitHub Pages Deployment
+
+The site is configured for GitHub Pages deployment through GitHub Actions.
+
+Manual GitHub setting:
+
+1. Open the repository on GitHub.
+2. Go to `Settings` -> `Pages`.
+3. Under `Build and deployment`, set `Source` to `GitHub Actions`.
+
+After that, pushes to `main` will publish the static site. You can also run the deployment manually from `Actions` -> `Deploy GitHub Pages` -> `Run workflow`.
+
+The workflow publishes only the live site files and required archived image assets, not project docs or the zipped source archive.
+
+Expected Pages URL:
+
+```text
+https://mosesdasilva.github.io/fsr-website/
+```
+
 ## Git Workflow
 
 Recommended workflow:
@@ -88,4 +108,3 @@ Also verify that local assets referenced from `index.html` exist and manually in
 - Expand service cards into more specific remodeling services.
 - Improve the estimate form to match real quote intake needs.
 - Add footer links to BBB, Angi, licensing, service area, and contact details.
-

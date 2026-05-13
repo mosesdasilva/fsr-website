@@ -76,6 +76,7 @@ The Angi rating and review count link to the Angi profile.
 - Avoid copying the previous Weebly layout.
 - Use the source archive only for business context, media, and historical content.
 - Keep the site static with no build step.
+- Deploy the static site with GitHub Pages through GitHub Actions. GitHub repository settings still need Pages `Source` set to `GitHub Actions`. The workflow publishes only `index.html`, `styles.css`, `script.js`, and archived assets needed by the page.
 
 ## AI Workflow Influence
 
