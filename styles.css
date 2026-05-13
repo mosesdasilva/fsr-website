@@ -337,39 +337,58 @@ h3 {
   font-size: 0.92rem;
 }
 
-.quick-strip {
+.trust-bar {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-bottom: 1px solid var(--line);
   background: var(--white);
 }
 
-.quick-strip a {
-  min-height: 116px;
-  padding: 26px clamp(18px, 4vw, 44px);
+.trust-bar a,
+.trust-bar div {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: 104px;
+  padding: 22px clamp(14px, 2.4vw, 28px);
   border-right: 1px solid var(--line);
 }
 
-.quick-strip a:last-child {
+.trust-bar a:last-child,
+.trust-bar div:last-child {
   border-right: 0;
 }
 
-.quick-strip span,
-.quick-strip strong {
+.trust-bar a {
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.trust-bar a:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.trust-bar span,
+.trust-bar strong {
   display: block;
 }
 
-.quick-strip span {
-  margin-bottom: 8px;
+.trust-bar span {
+  margin-bottom: 7px;
   color: var(--muted);
-  font-size: 0.8rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
-.quick-strip strong {
-  font-size: clamp(1rem, 1.8vw, 1.35rem);
+.trust-bar a:hover span {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.trust-bar strong {
+  font-size: clamp(0.94rem, 1.35vw, 1.22rem);
+  line-height: 1.18;
 }
 
 .section {
@@ -820,11 +839,20 @@ h3 {
   }
 
   .hero-panel,
-  .quick-strip,
   .split,
   .work-heading,
   .contact-wrap {
     grid-template-columns: 1fr;
+  }
+
+  .trust-bar {
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    overflow-x: auto;
+  }
+
+  .trust-bar a:last-child,
+  .trust-bar div:last-child {
+    border-right: 0;
   }
 
   .service-grid,
@@ -888,12 +916,24 @@ h3 {
   }
 
   .hero-panel,
-  .quick-strip,
+  .trust-bar,
   .service-grid,
   .project-grid,
   .timeline,
   .reviews {
     grid-template-columns: 1fr;
+  }
+
+  .trust-bar a,
+  .trust-bar div {
+    min-height: 88px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .trust-bar a:last-child,
+  .trust-bar div:last-child {
+    border-bottom: 0;
   }
 
   .project-grid {
