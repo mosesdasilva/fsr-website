@@ -83,6 +83,7 @@ Every commit should leave the site in a usable state.
 - Use strong photography, clear service sections, concise proof points, and direct calls to action.
 - Keep the first screen focused on the business offer, not a generic landing page.
 - Avoid decorative UI that does not support trust, service clarity, or conversion.
+- Do not use text characters as UI imagery for controls, icons, arrows, or visual indicators. Prefer inline SVG, CSS-drawn shapes, or a proper icon library when imagery is needed.
 
 ## Content And Claims
 

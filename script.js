@@ -8,6 +8,7 @@ const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImage = document.querySelector("[data-lightbox-image]");
 const lightboxTitle = document.querySelector("[data-lightbox-title]");
 const lightboxClose = document.querySelector("[data-lightbox-close]");
+const carousels = [...document.querySelectorAll("[data-carousel]")];
 const stepButtons = [...document.querySelectorAll("[data-step]")];
 const stepPanel = document.querySelector("[data-step-panel]");
 const estimateForm = document.querySelector("[data-estimate-form]");
@@ -63,6 +64,22 @@ function closeLightbox() {
   lightboxImage.src = "";
 }
 
+function setCarouselSlide(carousel, nextIndex) {
+  const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
+  const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
+  const total = slides.length;
+  const index = (nextIndex + total) % total;
+
+  carousel.dataset.currentSlide = String(index);
+  slides.forEach((slide, slideIndex) => {
+    slide.hidden = slideIndex !== index;
+  });
+  dots.forEach((dot, dotIndex) => {
+    dot.classList.toggle("active", dotIndex === index);
+    dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+  });
+}
+
 function setActiveNav() {
   const offset = window.innerHeight * 0.35;
   const current = navLinks
@@ -116,6 +133,24 @@ lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) {
     closeLightbox();
   }
+});
+
+carousels.forEach((carousel) => {
+  const previous = carousel.querySelector("[data-carousel-prev]");
+  const next = carousel.querySelector("[data-carousel-next]");
+  const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
+
+  carousel.dataset.currentSlide = "0";
+  dots.forEach((dot, index) => {
+    dot.setAttribute("aria-current", index === 0 ? "true" : "false");
+    dot.addEventListener("click", () => setCarouselSlide(carousel, index));
+  });
+  previous.addEventListener("click", () => {
+    setCarouselSlide(carousel, Number(carousel.dataset.currentSlide) - 1);
+  });
+  next.addEventListener("click", () => {
+    setCarouselSlide(carousel, Number(carousel.dataset.currentSlide) + 1);
+  });
 });
 
 document.addEventListener("keydown", (event) => {

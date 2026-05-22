@@ -53,6 +53,7 @@ External profiles:
 
 - BBB: https://www.bbb.org/us/ma/woburn/profile/remodeling/four-seasons-remodeling-painting-services-0021-512915
 - Angi: https://www.angi.com/companylist/us/ma/woburn/four-seasons-remodeling-and-painting-reviews-1.htm
+- Instagram: https://www.instagram.com/fourseasonsremodelinginc/
 
 ## Current Trust Claims
 
@@ -77,6 +78,7 @@ The Angi rating and review count link to the Angi profile.
 - Use the source archive only for business context, media, and historical content.
 - Keep the site static with no build step.
 - Deploy the static site with GitHub Pages through GitHub Actions. GitHub repository settings still need Pages `Source` set to `GitHub Actions`. The workflow publishes only `index.html`, `styles.css`, `script.js`, and archived assets needed by the page.
+- The Recent Work section uses three local project carousel cards with placeholder images from the source archive. This avoids Instagram embed limitations while keeping a social-post style layout. Replace the placeholder image paths in `index.html` when final project photos are available.
 
 ## AI Workflow Influence
 
